@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"> <!-- Tambah data-theme untuk mode dark/light -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deluxe Interactive Portfolio | Sepnanto</title>
+  <!-- Tambahkan Font Awesome untuk ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-animation">
+      <!-- Robot and Human Walking then Dancing -->
+      <div class="loader-characters">
+        <div class="loader-robot">
+          <div class="loader-robot-head">
+            <div class="loader-robot-face">
+              <div class="loader-robot-eye left"></div>
+              <div class="loader-robot-eye right"></div>
+              <div class="loader-robot-mouth"></div>
+              <div class="loader-robot-antenna"></div>
+            </div>
+          </div>
+          <div class="loader-robot-body">
+            <div class="loader-robot-arm left">
+              <div class="loader-robot-hand"></div>
+            </div>
+            <div class="loader-robot-arm right">
+              <div class="loader-robot-hand"></div>
+            </div>
+            <div class="loader-robot-leg left"></div>
+            <div class="loader-robot-leg right"></div>
+          </div>
+        </div>
+        <div class="loader-human">
+          <div class="loader-human-head">
+            <div class="loader-human-hair"></div>
+            <div class="loader-human-face">
+              <div class="loader-human-eye left"></div>
+              <div class="loader-human-eye right"></div>
+              <div class="loader-human-mouth"></div>
+            </div>
+          </div>
+          <div class="loader-human-body">
+            <div class="loader-human-arm left">
+              <div class="loader-human-hand"></div>
+            </div>
+            <div class="loader-human-arm right">
+              <div class="loader-human-hand"></div>
+            </div>
+            <div class="loader-human-leg left"></div>
+            <div class="loader-human-leg right"></div>
+          </div>
+        </div>
+        <div class="loader-welcome-text">Welcome!</div>
+      </div>
+      <!-- Floating Particles -->
+      <div class="loader-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+    </div>
+    <div class="loader-text">
+      <p class="loader-main-text">Welcome my portfolio Sepnanto</p>
+      <div class="loader-percentage">
+        <span id="loader-percent">0</span>%
+      </div>
+    </div>
+    <div class="loader-progress">
+      <div class="loader-progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- GLOBAL FALLING STARS -->
+  <canvas id="globalStars" class="global-stars"></canvas>
+  
+  <!-- FLYING ROCKETS (Dark Mode Only) -->
+  <div class="rocket rocket-1"></div>
+  <div class="rocket rocket-2"></div>
+  <div class="rocket rocket-3"></div>
+  
+  <!-- EARTH AND MOON (Dark Mode Only) -->
+  <div class="space-objects">
+    <div class="earth"></div>
+    <div class="moon"></div>
+  </div>
+  
+  <!-- MOUNTAINS BACKGROUND (Light Mode Only) -->
+  <div class="mountains-background">
+    <div class="mountain mountain-1"></div>
+    <div class="mountain mountain-2"></div>
+    <div class="mountain mountain-3"></div>
+    <div class="sun"></div>
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+  </div>
+  
+  <!-- FLYING BIRDS (Light Mode Only) -->
+  <div class="flying-birds">
+    <div class="bird bird-1"></div>
+    <div class="bird bird-2"></div>
+    <div class="bird bird-3"></div>
+    <div class="bird bird-4"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <h2><i class="fas fa-code"></i> Sepnanto</h2>
+    <ul id="nav-links">
+      <li>
+        <a href="#hero" class="nav-robot-link" data-section="hero">
+          <div class="nav-robot nav-robot-home">
+            <div class="nav-robot-head">
+              <div class="nav-robot-eye left"></div>
+              <div class="nav-robot-eye right"></div>
+            </div>
+            <div class="nav-robot-body"></div>
+          </div>
+          <div class="nav-human nav-human-home">
+            <div class="nav-human-head">
+              <div class="nav-human-hair"></div>
+              <div class="nav-human-face">
+                <div class="nav-human-eye left"></div>
+                <div class="nav-human-eye right"></div>
+                <div class="nav-human-mouth"></div>
+              </div>
+            </div>
+            <div class="nav-human-body"></div>
+          </div>
+          <span><i class="fas fa-home"></i> Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#skills-section" class="nav-robot-link" data-section="skills">
+          <div class="nav-robot nav-robot-skills">
+            <div class="nav-robot-head">
+              <div class="nav-robot-eye left"></div>
+              <div class="nav-robot-eye right"></div>
+              <div class="nav-robot-antenna"></div>
+            </div>
+            <div class="nav-robot-body"></div>
+          </div>
+          <div class="nav-human nav-human-skills">
+            <div class="nav-human-head">
+              <div class="nav-human-hair"></div>
+              <div class="nav-human-face">
+                <div class="nav-human-eye left"></div>
+                <div class="nav-human-eye right"></div>
+                <div class="nav-human-mouth"></div>
+              </div>
+            </div>
+            <div class="nav-human-body">
+              <div class="nav-human-arm left"></div>
+              <div class="nav-human-arm right"></div>
+            </div>
+          </div>
+          <span><i class="fas fa-tools"></i> Skills</span>
+        </a>
+      </li>
+      <li>
+        <a href="#projects-section" class="nav-robot-link" data-section="projects">
+          <div class="nav-robot nav-robot-projects">
+            <div class="nav-robot-head">
+              <div class="nav-robot-eye left"></div>
+              <div class="nav-robot-eye right"></div>
+            </div>
+            <div class="nav-robot-body">
+              <div class="nav-robot-arm left"></div>
+              <div class="nav-robot-arm right"></div>
+            </div>
+          </div>
+          <div class="nav-human nav-human-projects">
+            <div class="nav-human-head">
+              <div class="nav-human-hair"></div>
+              <div class="nav-human-face">
+                <div class="nav-human-eye left"></div>
+                <div class="nav-human-eye right"></div>
+                <div class="nav-human-mouth"></div>
+              </div>
+            </div>
+            <div class="nav-human-body">
+              <div class="nav-human-arm left"></div>
+              <div class="nav-human-arm right"></div>
+            </div>
+          </div>
+          <span><i class="fas fa-folder-tree"></i> Projects</span>
+        </a>
+      </li>
+      <li>
+        <a href="#certs-section" class="nav-robot-link" data-section="certs">
+          <div class="nav-robot nav-robot-certs">
+            <div class="nav-robot-head">
+              <div class="nav-robot-eye left"></div>
+              <div class="nav-robot-eye right"></div>
+              <div class="nav-robot-mouth"></div>
+            </div>
+            <div class="nav-robot-body"></div>
+          </div>
+          <div class="nav-human nav-human-certs">
+            <div class="nav-human-head">
+              <div class="nav-human-hair"></div>
+              <div class="nav-human-face">
+                <div class="nav-human-eye left"></div>
+                <div class="nav-human-eye right"></div>
+                <div class="nav-human-mouth smile"></div>
+              </div>
+            </div>
+            <div class="nav-human-body"></div>
+          </div>
+          <span><i class="fas fa-certificate"></i> Certifications</span>
+        </a>
+      </li>
+      <li>
+        <a href="#contact-section" class="nav-robot-link" data-section="contact">
+          <div class="nav-robot nav-robot-contact">
+            <div class="nav-robot-head">
+              <div class="nav-robot-eye left"></div>
+              <div class="nav-robot-eye right"></div>
+            </div>
+            <div class="nav-robot-body">
+              <div class="nav-robot-hand left"></div>
+              <div class="nav-robot-hand right"></div>
+            </div>
+          </div>
+          <div class="nav-human nav-human-contact">
+            <div class="nav-human-head">
+              <div class="nav-human-hair"></div>
+              <div class="nav-human-face">
+                <div class="nav-human-eye left"></div>
+                <div class="nav-human-eye right"></div>
+                <div class="nav-human-mouth"></div>
+              </div>
+            </div>
+            <div class="nav-human-body">
+              <div class="nav-human-hand left"></div>
+              <div class="nav-human-hand right"></div>
+            </div>
+          </div>
+          <span><i class="fas fa-envelope"></i> Contact</span>
+        </a>
+      </li>
+    </ul>
+    <!-- Theme toggle dengan robot -->
+    <button id="theme-toggle" class="theme-toggle nav-robot-link" aria-label="Toggle Theme">
+      <div class="nav-robot">
+        <div class="nav-robot-head">
+          <div class="nav-robot-eye left"></div>
+          <div class="nav-robot-eye right"></div>
+        </div>
+        <div class="nav-robot-body"></div>
+      </div>
+      <i class="fas fa-moon"></i>
+    </button>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <canvas id="bgCanvas"></canvas>
+      <img src="assets/profile.jpg" alt="Profile photo of Sepnanto Muresta, an IT Support Specialist" id="heroImage">
+      <h2 class="hero-greeting reveal"><span class="gradient-text">Hello, I'm</span></h2>
+      <h1 id="hero-title" class="reveal"></h1> <!-- Tambah id untuk typing effect, kosongkan teks -->
+      <div id="hero-subtitle-wrapper" class="hero-subtitle-wrapper reveal" style="display: none;">
+        <div class="hero-subtitle-side-animal">
+          <div class="animal-character animal-bird">
+            <div class="animal-head">
+              <div class="animal-beak"></div>
+              <div class="animal-face">
+                <div class="animal-eye left-eye"></div>
+                <div class="animal-eye right-eye"></div>
+              </div>
+            </div>
+            <div class="animal-body"></div>
+            <div class="animal-wing left-wing"></div>
+            <div class="animal-wing right-wing"></div>
+          </div>
+        </div>
+        <div id="hero-subtitle" class="hero-subtitle"></div>
+      </div>
+      <p class="reveal hero-description" id="hero-description" style="display: none;">
+        <span class="description-highlight">IT Support Specialist</span> experienced in 
+        <span class="description-keyword">troubleshooting</span> hardware & software, 
+        <span class="description-keyword">network maintenance</span>, 
+        <span class="description-keyword">Windows Server</span>, remote tools, and 
+        <span class="description-keyword">IT infrastructure optimization</span>.
+      </p>
+      <a href="#skills-section" class="cta-button"><i class="fas fa-arrow-down"></i> Explore Skills</a>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills-section">
+      <div class="section-title-wrapper reveal">
+        <div class="section-robot section-robot-skills">
+          <div class="section-robot-head">
+            <div class="section-robot-eye left"></div>
+            <div class="section-robot-eye right"></div>
+            <div class="section-robot-antenna"></div>
+          </div>
+          <div class="section-robot-body"></div>
+        </div>
+        <div class="section-human section-human-skills">
+          <div class="section-human-head">
+            <div class="section-human-hair"></div>
+            <div class="section-human-face">
+              <div class="section-human-eye left"></div>
+              <div class="section-human-eye right"></div>
+              <div class="section-human-mouth"></div>
+            </div>
+          </div>
+          <div class="section-human-body">
+            <div class="section-human-arm left"></div>
+            <div class="section-human-arm right"></div>
+          </div>
+        </div>
+        <h2 class="section-title"><i class="fas fa-star"></i> Skills</h2>
+      </div>
+      <div class="divider"></div>
+      <div class="skills reveal" id="skills">
+        <canvas id="skillStars"></canvas>
+        <div class="skill-card" onclick="this.classList.toggle('clicked')">
+          <div class="skill-card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <i class="fas fa-file-word skill-icon pulse"></i> <!-- Tambah class pulse -->
+          <h3>Microsoft Office</h3>
+          <div class="progress-bar"><div class="progress" data-percent="85"></div></div>
+          <span class="percentage">85%</span>
+        </div>
+        <div class="skill-card" onclick="this.classList.toggle('clicked')">
+          <div class="skill-card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <i class="fas fa-network-wired skill-icon pulse"></i> <!-- Tambah class pulse -->
+          <h3>Networking</h3>
+          <div class="progress-bar"><div class="progress" data-percent="80"></div></div>
+          <span class="percentage">80%</span>
+        </div>
+        <div class="skill-card" onclick="this.classList.toggle('clicked')">
+          <div class="skill-card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <i class="fas fa-wrench skill-icon pulse"></i> <!-- Tambah class pulse -->
+          <h3>Troubleshooting</h3>
+          <div class="progress-bar"><div class="progress" data-percent="90"></div></div>
+          <span class="percentage">90%</span>
+        </div>
+        <div class="skill-card" onclick="this.classList.toggle('clicked')">
+          <div class="skill-card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <i class="fas fa-headset skill-icon pulse"></i> <!-- Tambah class pulse -->
+          <h3>Help Desk</h3>
+          <div class="progress-bar"><div class="progress" data-percent="85"></div></div>
+          <span class="percentage">85%</span>
+        </div>
+        <div class="skill-card" onclick="this.classList.toggle('clicked')">
+          <div class="skill-card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <i class="fab fa-figma skill-icon pulse"></i> <!-- Tambah class pulse -->
+          <h3>Figma</h3>
+          <div class="progress-bar"><div class="progress" data-percent="75"></div></div>
+          <span class="percentage">75%</span>
+        </div>
+        <div class="skill-card" onclick="this.classList.toggle('clicked')">
+          <div class="skill-card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <i class="fas fa-database skill-icon pulse"></i> <!-- Tambah class pulse -->
+          <h3>MySQL</h3>
+          <div class="progress-bar"><div class="progress" data-percent="80"></div></div>
+          <span class="percentage">80%</span>
+        </div>
+        <div class="skill-card" onclick="this.classList.toggle('clicked')">
+          <div class="skill-card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <i class="fab fa-js-square skill-icon pulse"></i> <!-- Tambah class pulse -->
+          <h3>JavaScript</h3>
+          <div class="progress-bar"><div class="progress" data-percent="85"></div></div>
+          <span class="percentage">85%</span>
+        </div>
+        <div class="skill-card" onclick="this.classList.toggle('clicked')">
+          <div class="skill-card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <i class="fab fa-react skill-icon pulse"></i> <!-- Tambah class pulse -->
+          <h3>React JS</h3>
+          <div class="progress-bar"><div class="progress" data-percent="75"></div></div>
+          <span class="percentage">75%</span>
+        </div>
+        <div class="skill-card" onclick="this.classList.toggle('clicked')">
+          <div class="skill-card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <i class="fab fa-golang skill-icon pulse"></i> <!-- Tambah class pulse -->
+          <h3>Golang</h3>
+          <div class="progress-bar"><div class="progress" data-percent="70"></div></div>
+          <span class="percentage">70%</span>
+        </div>
+        <div class="skill-card" onclick="this.classList.toggle('clicked')">
+          <div class="skill-card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <i class="fas fa-code-branch skill-icon pulse"></i> <!-- Tambah class pulse -->
+          <h3>Eclipse</h3>
+          <div class="progress-bar"><div class="progress" data-percent="70"></div></div>
+          <span class="percentage">70%</span>
+        </div>
+        <div class="skill-card" onclick="this.classList.toggle('clicked')">
+          <div class="skill-card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <i class="fab fa-node-js skill-icon pulse"></i> <!-- Tambah class pulse -->
+          <h3>Node JS</h3>
+          <div class="progress-bar"><div class="progress" data-percent="75"></div></div>
+          <span class="percentage">75%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects-section">
+      <div class="section-title-wrapper reveal">
+        <div class="section-robot section-robot-projects">
+          <div class="section-robot-head">
+            <div class="section-robot-eye left"></div>
+            <div class="section-robot-eye right"></div>
+          </div>
+          <div class="section-robot-body">
+            <div class="section-robot-arm left"></div>
+            <div class="section-robot-arm right"></div>
+          </div>
+        </div>
+        <div class="section-human section-human-projects">
+          <div class="section-human-head">
+            <div class="section-human-hair"></div>
+            <div class="section-human-face">
+              <div class="section-human-eye left"></div>
+              <div class="section-human-eye right"></div>
+              <div class="section-human-mouth"></div>
+            </div>
+          </div>
+          <div class="section-human-body">
+            <div class="section-human-arm left"></div>
+            <div class="section-human-arm right"></div>
+          </div>
+        </div>
+        <h2 class="section-title"><i class="fas fa-folder-open"></i> Projects</h2>
+      </div>
+      <div class="divider"></div>
+      <p class="section-intro reveal">Focus on two main products: Warung LM (POS & ordering system) and Kiko Editing (editing services platform).</p>
+      <div class="featured-wrapper reveal">
+        <div class="featured-header">
+          <h3><i class="fas fa-bolt"></i> Featured Showcases</h3>
+          <p>Brief overview of local projects, organized by product with detailed descriptions.</p>
+        </div>
+        <div class="slider-block" data-project="warunglm">
+          <div class="slider-block-header">
+            <div>
+              <h4><i class="fas fa-store"></i> Warung LM</h4>
+              <span class="tag subtle">POS &amp; Ordering</span>
+            </div>
+            <button class="view-detail-btn" data-project="warunglm" aria-label="View details">
+              <i class="fas fa-expand"></i> View Details
+            </button>
+          </div>
+          <div class="project-description">
+            <p><strong>Warung LM</strong> is a comprehensive Point of Sale (POS) and online ordering system designed specifically for food stalls and small restaurants. The platform features an interactive menu catalog with high-quality food images, detailed pricing, and descriptions for each item.</p>
+            <p>Key features include a seamless shopping cart experience, streamlined checkout process with order summary and total calculation, and integrated payment management system. The dashboard provides real-time order tracking, sales analytics, and inventory management tools for business owners.</p>
+            <p>The system enables customers to browse menus, add items to cart, review orders, and complete transactions digitally, making the ordering process convenient and efficient. Built with modern web technologies, Warung LM offers a user-friendly interface that enhances both customer experience and business operations.</p>
+          </div>
+        </div>
+
+        <div class="slider-block" data-project="kiko">
+          <div class="slider-block-header">
+            <div>
+              <h4><i class="fas fa-magic"></i> Kiko Editing</h4>
+              <span class="tag subtle">Editing Services</span>
+            </div>
+            <button class="view-detail-btn" data-project="kiko" aria-label="View details">
+              <i class="fas fa-expand"></i> View Details
+            </button>
+          </div>
+          <div class="project-description">
+            <p><strong>Kiko Editing</strong> is a professional web platform designed for editing service businesses. The platform provides a comprehensive solution for managing editing orders, showcasing portfolios, and facilitating client interactions.</p>
+            <p>The system includes a robust order management dashboard where service providers can track order status, manage client communications, and monitor project progress. Clients can easily place orders through a detailed booking form that captures service requirements, preferences, and pricing information.</p>
+            <p>A featured portfolio gallery displays previous work samples, helping potential clients evaluate the quality and style of editing services offered. The platform streamlines the entire workflow from initial inquiry to project completion, making it easier for both service providers and clients to collaborate effectively.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="section" id="certs-section">
+      <div class="section-title-wrapper reveal">
+        <div class="section-robot section-robot-certs">
+          <div class="section-robot-head">
+            <div class="section-robot-eye left"></div>
+            <div class="section-robot-eye right"></div>
+            <div class="section-robot-mouth"></div>
+          </div>
+          <div class="section-robot-body"></div>
+        </div>
+        <div class="section-human section-human-certs">
+          <div class="section-human-head">
+            <div class="section-human-hair"></div>
+            <div class="section-human-face">
+              <div class="section-human-eye left"></div>
+              <div class="section-human-eye right"></div>
+              <div class="section-human-mouth smile"></div>
+            </div>
+          </div>
+          <div class="section-human-body"></div>
+        </div>
+        <h2 class="section-title"><i class="fas fa-award"></i> Certifications</h2>
+      </div>
+      <div class="divider"></div>
+      <div class="certs reveal">
+        <div class="cert-card">
+          <i class="fas fa-network-wired cert-icon"></i>
+          <h3>Mikrotik Certified Network Associate</h3>
+          <p><a href="https://mikrotik.com/training/certificates/c465988c12f628ea01a4" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a></p>
+        </div>
+        <div class="cert-card">
+          <i class="fas fa-cloud cert-icon"></i>
+          <h3>Dicoding — Cloud Practitioner Essentials</h3>
+          <p><a href="https://www.dicoding.com/certificates/QLZ96O887Z5D" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a></p>
+        </div>
+        <div class="cert-card">
+          <i class="fas fa-code cert-icon"></i>
+          <h3>Dicoding — Basic Programming</h3>
+          <p><a href="https://www.dicoding.com/certificates/1RXYQ7NWKZVM" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a></p>
+        </div>
+        <div class="cert-card">
+          <i class="fas fa-globe cert-icon"></i>
+          <h3>Dicoding — Web Programming Basics</h3>
+          <p><a href="https://www.dicoding.com/certificates/07Z6JDK7JXQR" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact-section">
+      <div class="section-title-wrapper reveal">
+        <div class="section-robot section-robot-contact">
+          <div class="section-robot-head">
+            <div class="section-robot-eye left"></div>
+            <div class="section-robot-eye right"></div>
+          </div>
+          <div class="section-robot-body">
+            <div class="section-robot-hand left"></div>
+            <div class="section-robot-hand right"></div>
+          </div>
+        </div>
+        <div class="section-human section-human-contact">
+          <div class="section-human-head">
+            <div class="section-human-hair"></div>
+            <div class="section-human-face">
+              <div class="section-human-eye left"></div>
+              <div class="section-human-eye right"></div>
+              <div class="section-human-mouth"></div>
+            </div>
+          </div>
+          <div class="section-human-body">
+            <div class="section-human-hand left"></div>
+            <div class="section-human-hand right"></div>
+          </div>
+        </div>
+        <h2 class="section-title"><i class="fas fa-address-book"></i> Contact</h2>
+      </div>
+      <div class="divider"></div>
+      <div class="contact reveal">
+        <div class="contact-card">
+          <div class="card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <img src="assets/linked.png" alt="LinkedIn icon" class="contact-icon">
+          <div>
+            <h5><i class="fab fa-linkedin"></i> LinkedIn</h5>
+            <a href="https://www.linkedin.com/in/sepnanto-muresta-saputra-307759277/" target="_blank">linkedin.com/in/sepnanto-muresta-saputra</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <img src="assets/github.png" alt="GitHub icon" class="contact-icon">
+          <div>
+            <h5><i class="fab fa-github"></i> GitHub</h5>
+            <a href="https://github.com/Sepnanto26" target="_blank">github.com/Sepnanto26</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <img src="assets/email.png" alt="Email icon" class="contact-icon">
+          <div>
+            <h5><i class="fas fa-envelope"></i> Email</h5>
+            <a href="mailto:murestasepnanto@gmail.com">murestasepnanto@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="card-robot">
+            <div class="mini-robot">
+              <div class="mini-robot-head">
+                <div class="mini-robot-eye left"></div>
+                <div class="mini-robot-eye right"></div>
+                <div class="mini-robot-mouth"></div>
+              </div>
+              <div class="mini-robot-body"></div>
+            </div>
+          </div>
+          <img src="assets/cv.png" alt="CV icon" class="contact-icon">
+          <div>
+            <h5><i class="fas fa-file-pdf"></i> CV</h5>
+            <a href="assets/sepnanto_cv.pdf" target="_blank">View CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <!-- THANK YOU SECTION -->
+    <section class="section thank-you-section" id="thank-you-section">
+      <div class="thank-you-content">
+        <h2 class="thank-you-title">
+          Thank You!
+        </h2>
+        <p class="thank-you-description reveal">
+          Thank you for taking the time to explore my portfolio! Your visit means a lot to me. 
+          I hope you enjoyed discovering my skills, projects, and professional journey. 
+          If you'd like to connect, collaborate, or just say hello, feel free to reach out through any of the contact methods above. 
+          Let's build something amazing together!
+        </p>
+        <div class="thank-you-characters reveal">
+          <!-- Robot 1 - Big Blocky Blue -->
+          <div class="interactive-character character-robot robot-big-blue" data-character="1">
+            <div class="robot-head-big">
+              <div class="robot-screen">
+                <div class="robot-eye-big left"></div>
+                <div class="robot-eye-big right"></div>
+                <div class="robot-mouth-line"></div>
+              </div>
+              <div class="robot-antenna-big"></div>
+            </div>
+            <div class="robot-body-big">
+              <div class="robot-chest-panel"></div>
+            </div>
+            <div class="robot-arm-big left">
+              <div class="robot-hand-big"></div>
+            </div>
+            <div class="robot-arm-big right">
+              <div class="robot-hand-big"></div>
+            </div>
+            <div class="robot-leg-big left"></div>
+            <div class="robot-leg-big right"></div>
+            <div class="robot-foot-big left"></div>
+            <div class="robot-foot-big right"></div>
+            <div class="character-message">Click me!</div>
+          </div>
+          
+          <!-- Human 1 - Male with Cap -->
+          <div class="interactive-character character-human human-male-cap" data-character="2">
+            <div class="human-head-male">
+              <div class="human-cap"></div>
+              <div class="human-face-male">
+                <div class="human-eye-male left"></div>
+                <div class="human-eye-male right"></div>
+                <div class="human-mouth-male"></div>
+              </div>
+            </div>
+            <div class="human-body-male">
+              <div class="human-arm-male left">
+                <div class="human-hand-male"></div>
+              </div>
+              <div class="human-arm-male right">
+                <div class="human-hand-male"></div>
+              </div>
+            </div>
+            <div class="human-leg-male left"></div>
+            <div class="human-leg-male right"></div>
+            <div class="human-foot-male left"></div>
+            <div class="human-foot-male right"></div>
+            <div class="character-message">Hello!</div>
+          </div>
+          
+          <!-- Robot 2 - Small Round Purple -->
+          <div class="interactive-character character-robot robot-small-purple" data-character="3">
+            <div class="robot-head-small">
+              <div class="robot-face-round">
+                <div class="robot-eye-small left"></div>
+                <div class="robot-eye-small right"></div>
+                <div class="robot-mouth-curve"></div>
+              </div>
+            </div>
+            <div class="robot-body-small">
+              <div class="robot-button"></div>
+            </div>
+            <div class="robot-arm-small left">
+              <div class="robot-hand-small"></div>
+            </div>
+            <div class="robot-arm-small right">
+              <div class="robot-hand-small"></div>
+            </div>
+            <div class="robot-leg-small left"></div>
+            <div class="robot-leg-small right"></div>
+            <div class="robot-foot-small left"></div>
+            <div class="robot-foot-small right"></div>
+            <div class="character-message">Thanks!</div>
+          </div>
+          
+          <!-- Human 2 - Female with Long Hair -->
+          <div class="interactive-character character-human human-female-hair" data-character="4">
+            <div class="human-head-female">
+              <div class="human-hair-female"></div>
+              <div class="human-face-female">
+                <div class="human-eye-female left"></div>
+                <div class="human-eye-female right"></div>
+                <div class="human-mouth-female"></div>
+              </div>
+            </div>
+            <div class="human-body-female">
+              <div class="human-arm-female left">
+                <div class="human-hand-female"></div>
+              </div>
+              <div class="human-arm-female right">
+                <div class="human-hand-female"></div>
+              </div>
+            </div>
+            <div class="human-leg-female left"></div>
+            <div class="human-leg-female right"></div>
+            <div class="human-foot-female left"></div>
+            <div class="human-foot-female right"></div>
+            <div class="character-message">Awesome!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>© 2025 Sepnanto Muresta — All Rights Reserved. <i class="fas fa-heart"></i></footer>
+
+  <!-- MODAL POPUP -->
+  <div id="project-modal" class="project-modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal"><i class="fas fa-times"></i></button>
+      <div class="modal-image-container">
+        <img id="modal-image" src="" alt="">
+        <button class="modal-nav prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+        <button class="modal-nav next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="modal-dots"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
