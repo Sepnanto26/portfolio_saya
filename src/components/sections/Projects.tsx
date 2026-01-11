@@ -65,7 +65,7 @@ const Projects: React.FC = () => {
         opacity: 1,
         y: 0
       }} viewport={{
-        once: false,
+        once: true, // DIUBAH JADI TRUE AGAR ENTENG
         margin: '-100px'
       }} transition={{
         duration: 0.6
@@ -87,7 +87,7 @@ const Projects: React.FC = () => {
           opacity: 1,
           y: 0
         }} viewport={{
-          once: false,
+          once: true, // DIUBAH JADI TRUE AGAR ENTENG
           margin: '-100px'
         }} transition={{
           duration: 0.6,
@@ -128,7 +128,7 @@ const Projects: React.FC = () => {
             opacity: 1,
             x: 0
           }} viewport={{
-            once: false,
+            once: true, // DIUBAH JADI TRUE AGAR ENTENG
             margin: '-100px'
           }} transition={{
             duration: 0.6,
@@ -140,7 +140,7 @@ const Projects: React.FC = () => {
               }} whileInView={{
                 width: '60px'
               }} viewport={{
-                once: false
+                once: true // DIUBAH JADI TRUE AGAR ENTENG
               }} transition={{
                 duration: 0.6,
                 delay: 0.3
@@ -163,7 +163,7 @@ const Projects: React.FC = () => {
                 opacity: 1,
                 scale: 1
               }} viewport={{
-                once: false
+                once: true // DIUBAH JADI TRUE AGAR ENTENG
               }} transition={{
                 delay: 0.4 + techIndex * 0.05
               }} className={`px-4 py-2 bg-gradient-to-r ${project.gradient} bg-opacity-10 text-white rounded-full text-sm font-medium border border-white/10`}>

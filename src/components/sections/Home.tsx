@@ -42,7 +42,7 @@ const Home: React.FC = () => {
       {/* Animated Particle Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-green-900/20 to-gray-900" />
-        {[...Array(20)].map((_, i) => <motion.div key={i} className="absolute w-2 h-2 bg-green-400/30 rounded-full" initial={{
+        {[...Array(12)].map((_, i) => <motion.div key={i} className="absolute w-2 h-2 bg-green-400/30 rounded-full" style={{ willChange: 'transform, opacity' }} initial={{
         x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
         y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000)
       }} animate={{
@@ -105,12 +105,7 @@ const Home: React.FC = () => {
           }} className="flex items-center gap-3 justify-center lg:justify-start">
               <span className="text-2xl sm:text-3xl text-gray-300 font-light flex items-center">
                 {displayedText}
-                <motion.span animate={{
-                opacity: [1, 0]
-              }} transition={{
-                duration: 0.8,
-                repeat: Infinity
-              }} className="inline-block w-0.5 h-8 bg-green-400 ml-1" />
+                {/* GARIS HIJAU BERKEDIP SUDAH DIHAPUS DI SINI */}
                 <span className="ml-2">👋</span> {/* Sticker Tangan */}
               </span>
             </motion.div>
@@ -170,7 +165,6 @@ const Home: React.FC = () => {
           }} transition={{
             delay: 1
           }} className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              {/* Tombol CV diarahkan ke file PDF dengan BASE_URL */}
               <motion.a href={`${import.meta.env.BASE_URL}Sepnanto_CV.pdf`} target="_blank" rel="noopener noreferrer" whileHover={{
               scale: 1.05
             }} whileTap={{
@@ -222,7 +216,6 @@ const Home: React.FC = () => {
             }} whileHover={{
               scale: 1.05
             }} className="relative z-10 w-48 h-48 mx-auto rounded-2xl overflow-hidden border-4 border-green-400 shadow-2xl shadow-green-400/20">
-                {/* Image Profile dengan BASE_URL */}
                 <img src={`${import.meta.env.BASE_URL}profile.jpg`} alt="Sepnanto Muresta" className="w-full h-full object-cover" />
               </motion.div>
               <motion.div initial={{

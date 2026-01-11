@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+
 const skills = {
   frontend: [{
     name: 'React',
@@ -190,6 +191,7 @@ const skills = {
     color: 'from-green-500 to-emerald-600'
   }]
 };
+
 const Skills: React.FC = () => {
   return <section id="skills" className="relative min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Circuit Board Background */}
@@ -210,7 +212,8 @@ const Skills: React.FC = () => {
         {/* Glowing Nodes */}
         {[...Array(15)].map((_, i) => <motion.div key={i} className="absolute w-2 h-2 bg-green-400 rounded-full" style={{
         left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`
+        top: `${Math.random() * 100}%`,
+        willChange: 'transform, opacity'
       }} animate={{
         scale: [1, 1.5, 1],
         opacity: [0.3, 0.8, 0.3]
@@ -224,7 +227,8 @@ const Skills: React.FC = () => {
         {[...Array(5)].map((_, i) => <motion.div key={`line-${i}`} className="absolute h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent" style={{
         width: '200px',
         top: `${20 + i * 20}%`,
-        left: '-200px'
+        left: '-200px',
+        willChange: 'transform'
       }} animate={{
         x: ['0vw', '120vw']
       }} transition={{
@@ -243,7 +247,7 @@ const Skills: React.FC = () => {
         opacity: 1,
         y: 0
       }} viewport={{
-        once: false,
+        once: true,
         margin: '-100px'
       }} transition={{
         duration: 0.6
@@ -253,7 +257,7 @@ const Skills: React.FC = () => {
         }} whileInView={{
           scale: 1
         }} viewport={{
-          once: false
+          once: true
         }} transition={{
           type: 'spring',
           stiffness: 200
@@ -275,7 +279,7 @@ const Skills: React.FC = () => {
           opacity: 1,
           y: 0
         }} viewport={{
-          once: false,
+          once: true,
           margin: '-100px'
         }} transition={{
           duration: 0.6
@@ -294,7 +298,7 @@ const Skills: React.FC = () => {
               scale: 1,
               y: 0
             }} viewport={{
-              once: false,
+              once: true,
               margin: '-50px'
             }} transition={{
               delay: index * 0.03,
@@ -307,7 +311,7 @@ const Skills: React.FC = () => {
             }} whileTap={{
               scale: 0.95,
               rotate: -5
-            }} className="group relative cursor-pointer">
+            }} className="group relative cursor-pointer" style={{ willChange: 'transform' }}>
                   <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} rounded-xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity`} />
                   <div className="relative bg-gray-900/90 backdrop-blur-sm border border-cyan-400/20 rounded-xl p-6 text-center hover:border-cyan-400/50 transition-colors">
                     <motion.div whileHover={{
@@ -337,7 +341,7 @@ const Skills: React.FC = () => {
           opacity: 1,
           y: 0
         }} viewport={{
-          once: false,
+          once: true,
           margin: '-100px'
         }} transition={{
           duration: 0.6
@@ -356,7 +360,7 @@ const Skills: React.FC = () => {
               scale: 1,
               y: 0
             }} viewport={{
-              once: false,
+              once: true,
               margin: '-50px'
             }} transition={{
               delay: index * 0.03,
@@ -369,7 +373,7 @@ const Skills: React.FC = () => {
             }} whileTap={{
               scale: 0.95,
               rotate: 5
-            }} className="group relative cursor-pointer">
+            }} className="group relative cursor-pointer" style={{ willChange: 'transform' }}>
                   <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} rounded-xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity`} />
                   <div className="relative bg-gray-900/90 backdrop-blur-sm border border-green-400/20 rounded-xl p-6 text-center hover:border-green-400/50 transition-colors">
                     <motion.div whileHover={{
@@ -399,7 +403,7 @@ const Skills: React.FC = () => {
           opacity: 1,
           y: 0
         }} viewport={{
-          once: false,
+          once: true,
           margin: '-100px'
         }} transition={{
           duration: 0.6
@@ -418,7 +422,7 @@ const Skills: React.FC = () => {
               scale: 1,
               y: 0
             }} viewport={{
-              once: false,
+              once: true,
               margin: '-50px'
             }} transition={{
               delay: index * 0.03,
@@ -430,7 +434,7 @@ const Skills: React.FC = () => {
             }} whileTap={{
               scale: 0.95,
               y: -5
-            }} className="group relative cursor-pointer">
+            }} className="group relative cursor-pointer" style={{ willChange: 'transform' }}>
                   <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} rounded-xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity`} />
                   <div className="relative bg-gray-900/90 backdrop-blur-sm border border-blue-400/20 rounded-xl p-6 text-center hover:border-blue-400/50 transition-colors">
                     <motion.div whileHover={{
@@ -460,7 +464,7 @@ const Skills: React.FC = () => {
           opacity: 1,
           y: 0
         }} viewport={{
-          once: false,
+          once: true,
           margin: '-100px'
         }} transition={{
           duration: 0.6
@@ -479,7 +483,7 @@ const Skills: React.FC = () => {
               scale: 1,
               y: 0
             }} viewport={{
-              once: false,
+              once: true,
               margin: '-50px'
             }} transition={{
               delay: index * 0.03,
@@ -492,7 +496,7 @@ const Skills: React.FC = () => {
             }} whileTap={{
               scale: 0.95,
               rotate: -5
-            }} className="group relative cursor-pointer">
+            }} className="group relative cursor-pointer" style={{ willChange: 'transform' }}>
                   <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} rounded-xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity`} />
                   <div className="relative bg-gray-900/90 backdrop-blur-sm border border-orange-400/20 rounded-xl p-6 text-center hover:border-orange-400/50 transition-colors">
                     <motion.div whileHover={{

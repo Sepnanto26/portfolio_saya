@@ -5,3 +5,63 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 /* DO NOT DELETE THESE TAILWIND IMPORTS, OTHERWISE THE STYLING WILL NOT RENDER AT ALL - DO NOT DELETE THIS COMMENT */
+
+/* --- CUSTOM SMOOTH OPTIMIZATIONS --- */
+
+html {
+  /* Membuat scroll antar section jadi halus */
+  scroll-behavior: smooth;
+  /* Menghindari munculnya scrollbar horizontal saat animasi berjalan */
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Membuat font terlihat lebih tajam dan halus */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
+  color: white;
+  /* Memaksa browser menggunakan Hardware Acceleration agar scroll tidak berat */
+  transform: translate3d(0, 0, 0);
+  overflow-x: hidden;
+}
+
+/* Mengatur tampilan Scrollbar agar sesuai tema dark kamu */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a; /* Warna track gelap */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981; /* Warna hijau emerald sesuai tema kamu */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #34d399; /* Warna hijau lebih terang saat di-hover */
+}
+
+/* Mencegah gambar atau elemen animasi terlihat pecah saat transisi */
+canvas, img, svg, .motion-div {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Menghilangkan highlight biru saat klik di HP */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Memastikan area section bersih dari glitch saat animasi scale */
+section {
+  position: relative;
+  width: 100%;
+  contain: paint;
+}

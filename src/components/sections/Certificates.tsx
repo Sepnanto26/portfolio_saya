@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { AwardIcon, ExternalLinkIcon } from 'lucide-react';
+
 const certificates = [{
   title: 'MikroTik Certified Network Associate',
   issuer: 'MikroTik',
@@ -26,6 +27,7 @@ const certificates = [{
   link: 'https://www.dicoding.com/certificates/07Z6JDK7JXQR',
   color: 'from-green-500 to-emerald-500'
 }];
+
 const Certificates: React.FC = () => {
   return <section id="certificates" className="relative min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Binary Rain Background */}
@@ -33,7 +35,8 @@ const Certificates: React.FC = () => {
         {/* Binary Numbers */}
         {[...Array(25)].map((_, i) => <motion.div key={i} className="absolute font-mono text-emerald-400/30 text-xs" style={{
         left: `${i * 4}%`,
-        top: -20
+        top: -20,
+        willChange: 'transform' // Optimasi GPU
       }} animate={{
         y: ['0vh', '110vh']
       }} transition={{
@@ -50,7 +53,8 @@ const Certificates: React.FC = () => {
         {/* Glowing Particles */}
         {[...Array(20)].map((_, i) => <motion.div key={`particle-${i}`} className="absolute w-1 h-1 bg-emerald-400 rounded-full" style={{
         left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`
+        top: `${Math.random() * 100}%`,
+        willChange: 'transform, opacity' // Optimasi GPU
       }} animate={{
         scale: [0, 1.5, 0],
         opacity: [0, 1, 0]
@@ -69,7 +73,7 @@ const Certificates: React.FC = () => {
         opacity: 1,
         y: 0
       }} viewport={{
-        once: false,
+        once: true, // Diubah jadi true agar smooth
         margin: '-100px'
       }} transition={{
         duration: 0.6
@@ -81,7 +85,7 @@ const Certificates: React.FC = () => {
           scale: 1,
           rotate: 0
         }} viewport={{
-          once: false
+          once: true // Diubah jadi true agar smooth
         }} transition={{
           type: 'spring',
           stiffness: 200,
@@ -106,7 +110,7 @@ const Certificates: React.FC = () => {
           y: 0,
           scale: 1
         }} viewport={{
-          once: false,
+          once: true, // Diubah jadi true agar smooth
           margin: '-100px'
         }} transition={{
           delay: index * 0.1,
@@ -163,7 +167,7 @@ const Certificates: React.FC = () => {
         opacity: 1,
         y: 0
       }} viewport={{
-        once: false
+        once: true // Diubah jadi true agar smooth
       }} transition={{
         delay: 0.5
       }} className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -190,7 +194,7 @@ const Certificates: React.FC = () => {
           opacity: 1,
           scale: 1
         }} viewport={{
-          once: false
+          once: true // Diubah jadi true agar smooth
         }} transition={{
           delay: 0.6 + index * 0.1,
           type: 'spring',
@@ -204,7 +208,7 @@ const Certificates: React.FC = () => {
           }} whileInView={{
             scale: 1
           }} viewport={{
-            once: false
+            once: true // Diubah jadi true agar smooth
           }} transition={{
             type: 'spring',
             stiffness: 200,
@@ -217,7 +221,7 @@ const Certificates: React.FC = () => {
           }} whileInView={{
             scale: 1
           }} viewport={{
-            once: false
+            once: true // Diubah jadi true agar smooth
           }} transition={{
             type: 'spring',
             stiffness: 200,
@@ -231,4 +235,5 @@ const Certificates: React.FC = () => {
       </div>
     </section>;
 };
+
 export default Certificates;

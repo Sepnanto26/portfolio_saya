@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ServerIcon, WrenchIcon, NetworkIcon, DatabaseIcon } from 'lucide-react';
+
 const specializations = [{
   icon: ServerIcon,
   title: 'IT Support',
@@ -18,6 +19,7 @@ const specializations = [{
   title: 'Infrastructure',
   description: 'IT infrastructure management'
 }];
+
 const About: React.FC = () => {
   return <section id="about" className="relative min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Matrix Rain Background */}
@@ -25,7 +27,8 @@ const About: React.FC = () => {
         {/* Matrix Characters */}
         {[...Array(30)].map((_, i) => <motion.div key={i} className="absolute font-mono text-green-400 text-sm opacity-30" style={{
         left: `${i * 3.33}%`,
-        top: -50
+        top: -50,
+        willChange: 'transform' // Optimasi GPU agar tidak lag
       }} animate={{
         y: ['0vh', '110vh']
       }} transition={{
@@ -51,7 +54,7 @@ const About: React.FC = () => {
         opacity: 1,
         y: 0
       }} viewport={{
-        once: false,
+        once: true, // Diubah jadi true agar sangat ringan
         margin: '-100px'
       }} transition={{
         duration: 0.6
@@ -63,7 +66,7 @@ const About: React.FC = () => {
           scale: 1,
           rotate: 0
         }} viewport={{
-          once: false
+          once: true // Diubah jadi true agar sangat ringan
         }} transition={{
           type: 'spring',
           stiffness: 200
@@ -85,7 +88,7 @@ const About: React.FC = () => {
           opacity: 1,
           x: 0
         }} viewport={{
-          once: false,
+          once: true, // Diubah jadi true agar sangat ringan
           margin: '-100px'
         }} transition={{
           duration: 0.6
@@ -99,7 +102,7 @@ const About: React.FC = () => {
             scale: 1,
             rotate: 0
           }} viewport={{
-            once: false,
+            once: true, // Diubah jadi true agar sangat ringan
             margin: '-100px'
           }} transition={{
             delay: index * 0.1,
@@ -131,7 +134,7 @@ const About: React.FC = () => {
           opacity: 1,
           x: 0
         }} viewport={{
-          once: false,
+          once: true, // Diubah jadi true agar sangat ringan
           margin: '-100px'
         }} transition={{
           duration: 0.6,
@@ -145,7 +148,7 @@ const About: React.FC = () => {
               opacity: 1,
               y: 0
             }} viewport={{
-              once: false
+              once: true // Diubah jadi true agar sangat ringan
             }} transition={{
               delay: 0.4
             }}>
@@ -191,7 +194,7 @@ const About: React.FC = () => {
               opacity: 1,
               y: 0
             }} viewport={{
-              once: false
+              once: true // Diubah jadi true agar sangat ringan
             }} transition={{
               delay: 0.6
             }} className="mt-8 flex flex-wrap gap-3">
@@ -202,7 +205,7 @@ const About: React.FC = () => {
                 opacity: 1,
                 x: 0
               }} viewport={{
-                once: false
+                once: true // Diubah jadi true agar sangat ringan
               }} transition={{
                 delay: 0.7 + index * 0.1
               }} whileHover={{
@@ -218,4 +221,5 @@ const About: React.FC = () => {
       </div>
     </section>;
 };
+
 export default About;
