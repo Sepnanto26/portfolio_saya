@@ -1,42 +1,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLinkIcon } from 'lucide-react';
+
 const projects = [{
   title: 'Warung LM',
-  description: 'Platform e-commerce lengkap untuk manajemen warung lokal. Fitur mencakup katalog produk, keranjang belanja, manajemen pesanan, dan integrasi pembayaran. Dibangun dengan teknologi web modern untuk pengalaman pengguna yang mulus.',
-  image: "/warung.png",
+  description: 'A comprehensive e-commerce platform for local store management. Features include a product catalog, shopping cart, order management, and payment integration. Built with modern web technologies to ensure a seamless and smooth user experience.',
+  image: "warung.png",
   demoLink: 'https://warung-lm.rf.gd/?i=1',
   tech: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript'],
   gradient: 'from-orange-500 to-red-500'
 }, {
   title: 'Kiko Editing',
-  description: 'Jasa desain grafis profesional untuk bisnis Anda. Website modern dengan portfolio kreatif, sistem pemesanan online, dan showcase karya visual berkualitas tinggi. Desain responsif dengan animasi smooth dan user experience yang optimal.',
-  image: "/kiko.png",
+  description: 'Professional graphic design services for your business. A modern website featuring a creative portfolio, online ordering system, and high-quality visual showcases. Responsive design with smooth animations and optimal user experience.',
+  image: "kiko.png",
   demoLink: 'https://kiko-web.xo.je/user/index.php?i=1',
   tech: ['PHP', 'MySQL', 'jQuery', 'CSS3'],
   gradient: 'from-blue-500 to-purple-500'
 }, {
   title: 'JetWash Express',
-  description: 'Website layanan cuci mobil premium dengan sistem booking online. Menampilkan paket layanan, kalkulator harga, penjadwalan appointment, dan ulasan pelanggan. Interface bersih dan modern dengan animasi yang halus untuk pengalaman terbaik.',
-  image: "/jetwas.png",
+  description: 'A premium car wash service website with an integrated online booking system. It showcases service packages, price calculators, appointment scheduling, and customer reviews. Features a clean and modern interface with smooth transitions.',
+  image: "jetwas.png",
   demoLink: 'https://sepnanto26.github.io/JetWash/index.html',
   tech: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
   gradient: 'from-cyan-500 to-blue-500'
 }, {
   title: 'Sesa Coffee',
-  description: 'Website coffee shop elegan dengan menu interaktif dan pemesanan online. Fitur menu dengan filter, peta lokasi, dan form kontak. Desain yang menangkap suasana hangat dan mengundang dari kafe modern dengan visual yang memukau.',
-  image: "/sesa.png",
+  description: 'An elegant coffee shop website with an interactive menu and online ordering. Features a filtered menu system, location maps, and contact forms. Designed to capture the warm and inviting atmosphere of a modern cafe with stunning visuals.',
+  image: "sesa.png",
   demoLink: 'https://sepnanto26.github.io/sesa-coffe/index.html',
   tech: ['HTML5', 'CSS3', 'JavaScript', 'Responsive'],
   gradient: 'from-amber-500 to-orange-500'
 }, {
   title: 'SMA Cakrawala Nusantara',
-  description: 'Website sekolah komprehensif dengan informasi akademik, berita terkini, portal siswa, dan tools administratif. Termasuk kalender event, galeri foto, dan sistem pendaftaran online untuk calon siswa. Desain profesional yang mencerminkan nilai pendidikan berkualitas.',
-  image: "/sma.png",
+  description: 'A comprehensive school management website providing academic information, latest news, student portals, and administrative tools. Includes an event calendar, photo gallery, and online registration system for prospective students.',
+  image: "sma.png",
   demoLink: 'http://smacakrawala.page.gd/',
   tech: ['HTML5', 'CSS3', 'JavaScript', 'PHP'],
   gradient: 'from-green-500 to-emerald-500'
 }];
+
 const Projects: React.FC = () => {
   return <section id="projects" className="relative min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Animated Background */}
@@ -73,7 +75,7 @@ const Projects: React.FC = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full" />
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            Showcase project terbaru saya dalam web development dan solusi IT
+            Showcasing my latest projects in web development and IT solutions
           </p>
         </motion.div>
 
@@ -102,7 +104,7 @@ const Projects: React.FC = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity z-10`} />
 
                   {/* Image */}
-                  <img src={project.image} alt={project.title} className="w-full h-[400px] object-cover object-top transform group-hover:scale-110 transition-transform duration-500" />
+                  <img src={`${import.meta.env.BASE_URL}${project.image}`} alt={project.title} className="w-full h-[400px] object-cover object-top transform group-hover:scale-110 transition-transform duration-500" />
 
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center">

@@ -170,14 +170,16 @@ const Home: React.FC = () => {
           }} transition={{
             delay: 1
           }} className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              {/* Tombol CV diarahkan ke file PDF */}
-              <motion.a href="/Sepnanto_CV.pdf" target="_blank" rel="noopener noreferrer" whileHover={{
+              {/* Tombol CV diarahkan ke file PDF dengan BASE_URL */}
+              <motion.a href={`${import.meta.env.BASE_URL}Sepnanto_CV.pdf`} target="_blank" rel="noopener noreferrer" whileHover={{
               scale: 1.05
             }} whileTap={{
               scale: 0.95
             }} className="inline-flex items-center gap-2 px-6 py-3 bg-green-400 text-gray-900 rounded-lg font-semibold hover:bg-green-300 transition-colors shadow-lg shadow-green-400/20">
-                <DownloadIcon className="w-5 h-5" />
-                View CV
+                <div className="flex items-center gap-2">
+                  <DownloadIcon className="w-5 h-5" />
+                  View CV
+                </div>
               </motion.a>
 
               <motion.a href="https://wa.me/6287755313262" target="_blank" rel="noopener noreferrer" whileHover={{
@@ -220,7 +222,8 @@ const Home: React.FC = () => {
             }} whileHover={{
               scale: 1.05
             }} className="relative z-10 w-48 h-48 mx-auto rounded-2xl overflow-hidden border-4 border-green-400 shadow-2xl shadow-green-400/20">
-                <img src="/profile.jpg" alt="Sepnanto Muresta" className="w-full h-full object-cover" />
+                {/* Image Profile dengan BASE_URL */}
+                <img src={`${import.meta.env.BASE_URL}profile.jpg`} alt="Sepnanto Muresta" className="w-full h-full object-cover" />
               </motion.div>
               <motion.div initial={{
               opacity: 0,
